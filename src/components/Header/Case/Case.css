@@ -1,0 +1,14 @@
+.header-case{
+    display: flex;
+    align-items: center;
+}
+.header-case button{
+    background-color: transparent;
+}
+.case-logo{
+    margin-right: 30px;
+}
+.case-logo svg{
+    width: 30px;
+    height: 100%;
+}

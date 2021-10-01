@@ -1,0 +1,72 @@
+{
+  "name": "crypto-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.1",
+    "@testing-library/user-event": "^13.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "webpack serve --open --config configs/webpack.dev.js",
+    "build": "webpack --config configs/webpack.prod.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-proposal-export-namespace-from": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "prettier": "2.4.1",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.55.1",
+    "webpack-browser-plugin": "^1.0.20",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

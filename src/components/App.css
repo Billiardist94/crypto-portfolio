@@ -1,0 +1,71 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box
+}
+ul, li{
+  list-style: none
+}
+a, a:visited{
+  text-decoration: none
+}
+a:hover{
+  text-decoration: none
+}
+a:focus, a:active{
+  outline: none;
+}
+nav,footer,header,aside{
+  display: block
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  font-size: 100%
+}
+input{
+  outline: none;
+}
+input,button, textarea{
+  font-family: inherit;
+}
+input::-ms-clear{
+  display: none;
+}
+button{
+  cursor: pointer
+}
+button::-moz-focus-inner{
+  padding: 0;
+  border: 0;
+}
+img{
+  vertical-align: top
+}
+h1, h2, h3, h4, h5, h6{
+  font-size: inherit;
+  font-weight: inherit
+}
+/*------------------------------*/
+body{
+  font-family: open-sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  background-color: rgba(200, 200, 200, 0.36);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.container{
+  max-width: 1260px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 15px;
+}

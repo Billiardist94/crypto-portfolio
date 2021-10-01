@@ -1,0 +1,56 @@
+.section_currency-list{
+    width: 65%;
+    background-color: #d1daf8;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 10px;
+}
+.currency-list{
+    display: flex;
+    flex-direction: column;
+}
+.currency-item{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+.currency-item:last-child{
+    margin-bottom: 0;
+}
+.item-info{
+    display: flex;
+    align-items: center;
+}
+.item-logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+.item-header{
+    font-size: 18px;
+    font-weight: 600;
+}
+.item-priceUsd{
+    margin-right: 30px;
+    color: #414042;
+}
+.item-changePercent{
+    color: darkgreen;
+}
+.item-button button{
+    border-radius: 8px;
+    width: 120px;
+    height: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0072DB;
+    transition: .3s;
+}
+.item-button button:hover{
+    background-color: #0688FF;
+}
