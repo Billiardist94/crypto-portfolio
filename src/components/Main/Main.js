@@ -3,19 +3,37 @@ import './Main.css';
 import Intro from './Intro/Intro';
 import CurrencyList from './CurrencyList/CurrencyList';
 
-const Main = () => {
-  const { currency, setCurrency } = useState([]);
+// eslint-disable-next-line react/prop-types
+const Main = ({ currency }) => {
+  const [value, setValue] = useState('');
 
-  fetch('https://api.coincap.io/v2/assets')
-    .then((response) => response.json())
-    .then((result) => setCurrency(result));
+  const handleInput = (e) => {
+    setValue(e.target.value.trim());
+  };
+
+  // eslint-disable-next-line react/prop-types
+  const filteredCurrency = currency.filter(
+    (cur) =>
+      cur.name.toLowerCase().includes(value.toLowerCase()) ||
+      cur.symbol.toLowerCase().includes(value.toLowerCase())
+  );
 
   return (
     <main className="main">
       <div className="container">
         <div className="main-content">
           <Intro />
-          <CurrencyList currency={currency} />
+          <section className="main-form">
+            <form>
+              <input
+                onChange={handleInput}
+                type="text"
+                className="main-input"
+                placeholder="Search"
+              />
+            </form>
+            <CurrencyList currency={filteredCurrency} />
+          </section>
         </div>
       </div>
     </main>
