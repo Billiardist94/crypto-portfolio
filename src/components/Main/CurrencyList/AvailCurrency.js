@@ -1,11 +1,14 @@
 import React from 'react';
 import './CurrencyList.css';
 import './swiper-bundle.css';
+import { NavLink } from 'react-router-dom';
 
-const AvailCurrency = ({ name, symbol, priceUsd, changePercent24Hr }) => {
+const AvailCurrency = ({ id, rank, name, symbol, priceUsd, changePercent24Hr }) => {
+
   return (
     <>
       <div className="item-info">
+        <p className="item-rank">{rank}</p>
         <div className="item-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,21 +40,27 @@ const AvailCurrency = ({ name, symbol, priceUsd, changePercent24Hr }) => {
             </g>
           </svg>
         </div>
-        <h4 className="item-header">
-          {name}
-          <span> {symbol}</span>
-        </h4>
+        <NavLink to={`/${id}`}>
+          <h4 className="item-header">
+            <span>{name}</span>
+            <span> {symbol}</span>
+          </h4>
+        </NavLink>
       </div>
       <div className="item-volume">
         <span className="item-priceUsd">
-          price: $ {Math.round(parseFloat(priceUsd) * 100) / 100}
+          $ {Math.round(parseFloat(priceUsd) * 100) / 100}
         </span>
-        <span className="item-changePercent" style={(changePercent24Hr < 0) ? {color: 'red'} : {color: 'green'}}>
+        <span
+          className={changePercent24Hr < 0 ? 'item-changePercent_red' : 'item-changePercent_green'}
+        >
           {Math.round(parseFloat(changePercent24Hr) * 100) / 100}%
         </span>
       </div>
       <div className="item-button">
-        <button type="button">buy</button>
+        <NavLink to={`/${id}`}>
+          <button type="button">buy</button>
+        </NavLink>
       </div>
     </>
   );

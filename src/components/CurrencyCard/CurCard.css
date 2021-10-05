@@ -1,0 +1,95 @@
+.cur-card{
+    padding: 60px 0;
+    height: 100vh;
+}
+.cur-card-body{
+    width: 100%;
+    background-color: #d1daf8;
+    border-radius: 8px;
+    padding: 10px;
+}
+.cur-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0072DB;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.cur-card-logo{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+.cur-card-content{
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+}
+.cur-card-text{
+    width: 40%;
+}
+.card-list{
+    padding: 20px;
+}
+.card-item p{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.card-item p span:first-child{
+    cursor: help;
+}
+.cur-card-chart{
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 250px;
+}
+.card-btn{
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0072DB;
+    transition: .3s;
+    cursor: pointer;
+}
+.card-btn:hover {
+    background-color: #0688FF;
+}
+.card-buy-btn{
+    width: 120px;
+    margin-right: 0;
+}
+#back{
+    background-color: #0072db;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 13px;
+    color: white;
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    transition: .3s;
+}
+#back:hover {
+    background-color: #0688FF;
+}
