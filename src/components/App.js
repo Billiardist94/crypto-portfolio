@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FetchData from './FetchData/FetchData';
+import CurCard from './CurrencyCard/CurCard';
 import Header from './Header/Header';
-import Main from './Main/Main';
+import Footer from './Footer/Footer';
 
 function App() {
-  const [currency, setCurrency] = useState([]);
-
-  const fetchURL = 'https://api.coincap.io/v2/assets';
-
-  const getData = () => fetch(`${fetchURL}`).then((res) => res.json());
-  useEffect(() => {
-    const interval = setInterval(() => {
-      getData().then((data) => setCurrency(data.data));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currency]);
-
   return (
-    <div>
-      <Header currency={currency} />
-      <Main currency={currency} />
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={FetchData} />
+          <Route exact path="/:id" component={CurCard} />
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
