@@ -4,38 +4,39 @@ import { useSelector } from 'react-redux';
 
 const Case = () => {
   const sumCurrency = useSelector((state) => state.curCurrency);
-  const price = useSelector((state) => state.price.value);
+  const price = useSelector((state) => state.price);
 
-  const curPricePerQuantity = (sumCurrency * Math.round(parseFloat(price) * 100)) / 100; // текущая обновляемая стоимость валюты за кол-во в USD
+  const curPricePerQuantity = sumCurrency * Number(price.value).toFixed(2); // текущая обновляемая стоимость валюты за кол-во в USD
+
+  if (price === 0) {
+    localStorage.setItem('currentSum', 0);
+  }
 
   const onCase = (e) => {
     e.preventDefault();
     localStorage.setItem('currentSum', curPricePerQuantity);
   };
 
-  const fixPrice = localStorage.getItem('currentSum'); // стоимость валюты за кол-во в USD на момент записи в портфель
+  const fixPrice = Number(localStorage.getItem('currentSum')).toFixed(2); // стоимость валюты за кол-во в USD на момент записи в портфель
 
   const diffBetwPrices = fixPrice - curPricePerQuantity; // относительная разница между стоимостью валюты на момент записи в портфель и стоимостью валюты текущей
 
-  const diffBetwPricesPerc = (diffBetwPrices / curPricePerQuantity) * 100; // абсолютное выражение между стоимостью валюты на момент записи в портфель и стоимостью валюты текущей
+  const regex = /(?<=\d)(?=(\d{3})+(?!\d))/g;
+  const subst = ` `;
 
   return (
     <div className="case">
-      <div className="case-sum">
-        <span>{fixPrice} USD</span>
+      <div className="case__sum">
+        <span>{fixPrice.replace(regex, subst)} USD</span>
         <span
-          className={
-            diffBetwPrices < 0
-              ? 'item-changePercent_red header-cur-change'
-              : 'item-changePercent_green header-cur-change'
-          }
+          className={diffBetwPrices < 0 ? 'changePercent-red change' : 'changePercent-green change'}
         >
-          {Math.round(parseFloat(diffBetwPrices) * 100) / 100}
+          {Number(diffBetwPrices).toFixed(2)}
         </span>
-        <span>({Math.round(parseFloat(diffBetwPricesPerc) * 100) / 100}%)</span>
+        <span>({((diffBetwPrices * 100) / fixPrice).toFixed(2)} %)</span>
       </div>
-      <div className="case-logo">
-        <button onClick={onCase} className="case-logo-btn" type="button">
+      <div className="case__logo">
+        <button onClick={onCase} className="case__logo-btn" type="button">
           <svg
             version="1.1"
             id="Ebene_1"

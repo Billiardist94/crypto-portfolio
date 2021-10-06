@@ -5,11 +5,14 @@ import { NavLink } from 'react-router-dom';
 
 const AvailCurrency = ({ id, rank, name, symbol, priceUsd, changePercent24Hr }) => {
 
+  const regex = /(?<=\d)(?=(\d{3})+(?!\d))/g;
+  const subst = ` `;
+
   return (
     <>
-      <div className="item-info">
-        <p className="item-rank">{rank}</p>
-        <div className="item-logo">
+      <div className="item__info">
+        <p className="item__rank">{rank}</p>
+        <div className="item__logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlSpace="preserve"
@@ -41,23 +44,23 @@ const AvailCurrency = ({ id, rank, name, symbol, priceUsd, changePercent24Hr }) 
           </svg>
         </div>
         <NavLink to={`/${id}`}>
-          <h4 className="item-header">
+          <h4 className="item__header">
             <span>{name}</span>
             <span> {symbol}</span>
           </h4>
         </NavLink>
       </div>
-      <div className="item-volume">
-        <span className="item-priceUsd">
-          $ {Math.round(parseFloat(priceUsd) * 100) / 100}
+      <div className="item__volume">
+        <span className="item__priceUsd">
+          $ {String(Number(priceUsd).toFixed(2)).replace(regex, subst)}
         </span>
         <span
-          className={changePercent24Hr < 0 ? 'item-changePercent_red' : 'item-changePercent_green'}
+          className={changePercent24Hr < 0 ? 'changePercent-red' : 'changePercent-green'}
         >
           {Math.round(parseFloat(changePercent24Hr) * 100) / 100}%
         </span>
       </div>
-      <div className="item-button">
+      <div className="item__button">
         <NavLink to={`/${id}`}>
           <button type="button">buy</button>
         </NavLink>

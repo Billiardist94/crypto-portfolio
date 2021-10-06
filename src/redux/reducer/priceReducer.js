@@ -5,7 +5,6 @@ export const priceReducer = (state = initialState, action) => {
     case 'GET_PRICE':
       return {
         name: action.payload.name,
-        oldValue: state.value,
         value: action.payload.value,
       };
   }

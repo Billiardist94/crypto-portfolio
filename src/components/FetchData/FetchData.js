@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import HeaderInfo from '../Header/HeaderInfo/HeaderInfo';
+import HeaderInfo from '../Header/TopCurrency/TopCurrency';
 import Main from '../Main/Main';
 import Preloader from '../CurrencyCard/Preloader';
 
