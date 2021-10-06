@@ -2,20 +2,23 @@
     background-color: #fff;
     box-shadow: 0 -4px 6px rgb(0 0 0 / 10%);
 }
-.footer-body{
+.footer__body{
     padding: 20px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
 }
-.footer-list{
+.footer__title{
+    font-size: 12px;
+}
+.footer__list{
     display: flex;
     align-items: center;
 }
-.footer-list li{
+.footer__list li{
     margin-right: 10px;
 }
-.footer-list li:last-child{
+.footer__list li:last-child{
     margin-right: 0;
 }

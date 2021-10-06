@@ -4,25 +4,23 @@ import CurrencyCarousel from './CurrencyCarousel';
 import AvailCurrency from './AvailCurrency';
 import './swiper-bundle.css';
 
-// eslint-disable-next-line react/prop-types
 const CurrencyList = ({ currency }) => {
-
   return (
-    <section className="section_currency-list section">
-      <div className="currency-item list-title">
-        <div className="item-info">
-          <p className="item-rank title-rank">#</p>
-          <p className="item-logo">Logo</p>
-          <p className="item-header title-name">Name</p>
+    <section className="currency__table">
+      <div className="table__item list__title">
+        <div className="item__info">
+          <p className="item__rank title__rank">#</p>
+          <p className="item__logo">Logo</p>
+          <p className="item__header title__name">Name</p>
         </div>
-        <div className="item-volume">
-          <p className="item-priceUsd">Price/Change 24h</p>
+        <div className="item__volume">
+          <p className="item__priceUsd">Price/Change 24h</p>
         </div>
-        <p className="item-button title-button"> </p>
+        <p className="item__button title__button"> </p>
       </div>
       <CurrencyCarousel
         slides={currency?.map((cur) => (
-          <SwiperSlide key={cur.id} tag="li" className="currency-item">
+          <SwiperSlide key={cur.id} tag="li" className="table__item">
             <AvailCurrency
               rank={`${cur.rank}`}
               name={`${cur.name},`}

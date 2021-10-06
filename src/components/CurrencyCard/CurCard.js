@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './CurCard.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Preloader from './Preloader';
-import '../Header/HeaderInfo/HeaderInfo.css';
+import '../Header/TopCurrency/TopCurrency.css';
 import CardFilter from './CardFilter/CardFilter';
 import { useDispatch } from 'react-redux';
 
@@ -30,18 +30,21 @@ const CurCard = () => {
     history.push(`/`);
   };
 
+  const regex = /(?<=\d)(?=(\d{3})+(?!\d))/g;
+  const subst = ` `;
+
   if (currency === null) {
     return <Preloader />;
   }
   return (
-    <section className="cur-card">
+    <section className="currency-card">
       <div className="container">
         <a href="#" id="back" onClick={handleGoBack}>
           &#8656; Back to main
         </a>
-        <div className="cur-card-body">
-          <div className="cur-card-header">
-            <div className="cur-card-logo">
+        <div className="currency-card__body">
+          <div className="currency-card__header">
+            <div className="header__logo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlSpace="preserve"
@@ -74,10 +77,10 @@ const CurCard = () => {
             </div>
             <h2>{currency.name}</h2>
           </div>
-          <div className="cur-card-content">
-            <div className="cur-card-text">
-              <ul className="card-list">
-                <li key={currency.id} className="card-item">
+          <div className="currency-card__content">
+            <div className="content__text">
+              <ul className="content__list">
+                <li key={currency.id} className="item">
                   <p>
                     <span title="rank is in ascending order - this number is directly associated with the marketcap whereas the highest marketcap receives rank 1">
                       Rank:{' '}
@@ -92,27 +95,37 @@ const CurCard = () => {
                   </p>
                   <p>
                     <span title="available supply for trading">Supply: </span>
-                    <span>$ {Math.round(parseFloat(currency.supply) * 100) / 100}</span>
+                    <span>
+                      $ {String(Number(currency.supply).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="total quantity of asset issued">Max Supply: </span>
-                    <span>$ {Math.round(parseFloat(currency.maxSupply) * 100) / 100}</span>
+                    <span>
+                      $ {String(Number(currency.maxSupply).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="supply x price">Market capitalization: </span>
-                    <span>$ {Math.round(parseFloat(currency.marketCapUsd) * 100) / 100}</span>
+                    <span>
+                      $ {String(Number(currency.marketCapUsd).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="quantity of trading volume represented in USD over the last 24 hours">
                       Volume 24h:{' '}
                     </span>
-                    <span>$ {Math.round(parseFloat(currency.volumeUsd24Hr) * 100) / 100}</span>
+                    <span>
+                      $ {String(Number(currency.volumeUsd24Hr).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="volume-weighted price based on real-time market data, translated to USD">
                       Price:{' '}
                     </span>
-                    <span>$ {Math.round(parseFloat(currency.priceUsd) * 100) / 100}</span>
+                    <span>
+                      $ {String(Number(currency.priceUsd).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="the direction and value change in the last 24 hours">
@@ -120,9 +133,7 @@ const CurCard = () => {
                     </span>
                     <span
                       className={
-                        currency.changePercent24Hr < 0
-                          ? 'item-changePercent_red'
-                          : 'item-changePercent_green'
+                        currency.changePercent24Hr < 0 ? 'changePercent-red' : 'changePercent-green'
                       }
                     >
                       {Math.round(parseFloat(currency.changePercent24Hr) * 100) / 100} %
@@ -132,7 +143,9 @@ const CurCard = () => {
                     <span title="Volume Weighted Average Price in the last 24 hours">
                       VWAP 24h:{' '}
                     </span>
-                    <span>{Math.round(parseFloat(currency.vwap24Hr) * 100) / 100}</span>
+                    <span>
+                      {String(Number(currency.vwap24Hr).toFixed(2)).replace(regex, subst)}
+                    </span>
                   </p>
                   <p>
                     <span title="Website">Website: </span>
@@ -143,8 +156,8 @@ const CurCard = () => {
                 </li>
               </ul>
             </div>
-            <div className="cur-card-chart">
-              <div className="card-chart">Chart</div>
+            <div className="content__chart">
+              <div className="chart">Chart</div>
               <CardFilter />
             </div>
           </div>

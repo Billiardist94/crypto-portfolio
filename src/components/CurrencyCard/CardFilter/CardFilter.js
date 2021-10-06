@@ -18,11 +18,11 @@ const CardFilter = () => {
   };
 
   return (
-    <div className="card-filter">
+    <div className="filter">
       <button
         onClick={handleDecrementSumCurrency}
         type="button"
-        className="card-change-btn card-btn"
+        className="filter__btn-change filter__btn"
       >
         -
       </button>
@@ -30,11 +30,11 @@ const CardFilter = () => {
       <button
         onClick={handleIncrementSumCurrency}
         type="button"
-        className="card-change-btn card-btn"
+        className="filter__btn-change filter__btn"
       >
         +
       </button>
-      <span>And press on case</span>
+      <span>And press on your case</span>
     </div>
   );
 };

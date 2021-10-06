@@ -1,14 +1,10 @@
-.section_currency-list{
+.currency__table{
     width: 100%;
     background-color: #d1daf8;
     border-radius: 8px;
     padding: 10px 5px 10px 10px;
 }
-.currency-list{
-    display: flex;
-    flex-direction: column;
-}
-.currency-item{
+.table__item{
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -18,51 +14,51 @@
     border-radius: 8px;
     padding: 5px 10px;
 }
-.currency-item:last-child{
+.table__item:last-child{
     margin-bottom: 0;
 }
-.item-info{
+.item__info{
     display: flex;
     align-items: center;
     width: 200px;
 }
-.item-rank{
+.item__rank{
     margin-right: 10px;
 }
-.item-logo{
+.item__logo{
     width: 50px;
     flex-shrink: 0;
     margin-right: 20px;
 }
 
-.item-header{
+.item__header{
     font-size: 18px;
     font-weight: 600;
 }
-.item-header span{
+.item__header span{
     color: #000000;
     font-size: 16px;
 }
-.item-volume{
+.item__volume{
     display: flex;
     flex-direction: column;
     font-size: 14px;
     width: 200px;
 }
-.item-priceUsd{
+.item__priceUsd{
     margin-right: 30px;
     color: #414042;
 }
-.item-changePercent_green{
+.changePercent-green{
     color: green;
 }
-.item-changePercent_green:before{
+.changePercent-green:before{
     content: '+';
 }
-.item-changePercent_red{
+.changePercent-red{
     color: red;
 }
-.item-button button{
+.item__button button{
     border-radius: 8px;
     width: 120px;
     height: 40px;
@@ -71,27 +67,20 @@
     background-color: #0072DB;
     transition: .3s;
 }
-.item-button button:hover{
+.item__button button:hover{
     background-color: #0688FF;
 }
-.currency-list-title{
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    width: 98%;
-    padding: 5px 10px;
-}
-.list-title{
+.list__title{
     width: 98%;
 }
-.list-title p{
+.list__title p{
     color: #414042;
     font-size: 12px;
     font-weight: 400;
 }
-.title-button{
+.title__button{
     width: 122px;
 }
-.title-rank{
+.title__rank{
     margin-right: 18px;
 }

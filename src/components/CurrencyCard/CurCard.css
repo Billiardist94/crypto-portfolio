@@ -1,14 +1,15 @@
-.cur-card{
+.currency-card{
     padding: 60px 0;
     height: 100vh;
+    min-height: 570px;
 }
-.cur-card-body{
+.currency-card__body{
     width: 100%;
     background-color: #d1daf8;
     border-radius: 8px;
     padding: 10px;
 }
-.cur-card-header{
+.currency-card__header{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,64 +21,41 @@
     padding: 10px;
     margin-bottom: 10px;
 }
-.cur-card-logo{
+.header__logo{
     width: 50px;
     height: 50px;
     flex-shrink: 0;
     margin-right: 20px;
 }
-.cur-card-content{
+.currency-card__content{
     background-color: #fff;
     border-radius: 8px;
     padding: 10px;
     display: flex;
 }
-.cur-card-text{
+.content__text{
     width: 40%;
 }
-.card-list{
+.content__list{
     padding: 20px;
 }
-.card-item p{
+.item p{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e3e3e3;
     margin-bottom: 10px;
     overflow: hidden;
 }
-.card-item p span:first-child{
+.item p span:first-child{
     cursor: help;
 }
-.cur-card-chart{
+.content__chart{
     width: 60%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
-.card-filter{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 250px;
-}
-.card-btn{
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #0072DB;
-    transition: .3s;
-    cursor: pointer;
-}
-.card-btn:hover {
-    background-color: #0688FF;
-}
-.card-buy-btn{
-    width: 120px;
-    margin-right: 0;
 }
 #back{
     background-color: #0072db;

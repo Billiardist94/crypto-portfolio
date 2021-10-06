@@ -1,24 +1,9 @@
-.header-case{
+.user__info{
     display: flex;
     align-items: center;
 }
-.header-case button{
+.user__info button{
     background-color: transparent;
-}
-.case-logo svg{
-    width: 30px;
-    height: 100%;
-}
-.case-logo svg g path{
-    fill: #ffffff;
-}
-.case-sum{
-    margin-right: 10px;
-}
-.case-sum span{
-    font-size: 14px;
-    color: #ffffff;
-    margin-right: 10px;
 }
 .case{
     display: flex;
@@ -27,4 +12,19 @@
     background-color: #0072DB;
     margin-right: 20px;
     padding: 2px 10px;
+}
+.case__logo svg{
+    width: 30px;
+    height: 100%;
+}
+.case__logo svg g path{
+    fill: #ffffff;
+}
+.case__sum{
+    margin-right: 10px;
+}
+.case__sum span{
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 10px;
 }

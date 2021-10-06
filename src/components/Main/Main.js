@@ -21,14 +21,14 @@ const Main = ({ currency }) => {
   return (
     <main className="main">
       <div className="container">
-        <div className="main-content">
+        <div className="main__body">
           <Intro />
-          <section className="main-form">
-            <form>
+          <section className="main__content">
+            <form className="form">
               <input
                 onChange={handleInput}
                 type="text"
-                className="main-input"
+                className="input"
                 placeholder="Search"
               />
             </form>

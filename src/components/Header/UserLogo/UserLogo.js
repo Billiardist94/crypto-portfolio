@@ -1,7 +1,7 @@
 import React from 'react';
-import './UserInfo.css';
+import './UserLogo.css';
 
-const UserInfo = () => {
+const UserLogo = () => {
   return (
     <div className="user-logo">
       <button className="user-logo-btn" type="button">
@@ -27,4 +27,4 @@ const UserInfo = () => {
   );
 };
 
-export default UserInfo;
+export default UserLogo;
